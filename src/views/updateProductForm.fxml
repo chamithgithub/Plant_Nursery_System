@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="445.0" prefWidth="332.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateProductFormController">
+   <children>
+      <Label layoutX="75.0" layoutY="54.0" text="Update Product Form ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="44.0" layoutY="79.0" prefHeight="5.0" prefWidth="245.0" />
+      <TextField fx:id="txtName" layoutX="56.0" layoutY="140.0" prefHeight="26.0" prefWidth="231.0" promptText="Product  Name" />
+      <TextField fx:id="txtId" layoutX="56.0" layoutY="97.0" onAction="#txtSearchOnAction" prefHeight="26.0" prefWidth="231.0" promptText="Product  Id" />
+      <TextField fx:id="txtType" layoutX="56.0" layoutY="186.0" prefHeight="26.0" prefWidth="231.0" promptText="Product Type" />
+      <TextField fx:id="txtDesc" layoutX="56.0" layoutY="230.0" prefHeight="26.0" prefWidth="231.0" promptText="Product  Description" />
+      <Button layoutX="56.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="231.0" text="Update" />
+      <TextField fx:id="txtUnitPrice" layoutX="56.0" layoutY="274.0" prefHeight="26.0" prefWidth="231.0" promptText="Product  Unit Price" />
+      <TextField fx:id="txtQty" layoutX="56.0" layoutY="319.0" prefHeight="26.0" prefWidth="231.0" promptText="Product  Qty" />
+   </children>
+</AnchorPane>

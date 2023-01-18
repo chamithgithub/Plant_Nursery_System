@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mainPane" prefHeight="726.0" prefWidth="523.0" stylesheets="../assert/styles/CustomerForm.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewCustomerFormController">
+    <children>
+        <VBox layoutX="17.0" layoutY="76.0" prefHeight="268.0" prefWidth="496.0">
+            <children>
+                <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+                    <children>
+                        <TextField fx:id="txtCusID" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="C00-001" styleClass="textField" />
+                        <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Customer ID" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                    </VBox.margin>
+                </AnchorPane>
+                <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+                    <children>
+                        <TextField fx:id="txtCusName" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Chamith Dilshan" styleClass="textField" />
+                        <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Customer Name" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </AnchorPane>
+                <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+                    <children>
+                        <TextField fx:id="txtCusAddress" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Colombo 7" styleClass="textField" />
+                        <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Customer Address" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </AnchorPane>
+                <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+                    <children>
+                        <TextField fx:id="txtCusContract" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="07*-1234567" styleClass="textField" />
+                        <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Customer Contract" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <TableView fx:id="tblCustomer" layoutX="15.0" layoutY="395.0" prefHeight="317.0" prefWidth="496.0">
+            <columns>
+                <TableColumn fx:id="colCusId" prefWidth="84.0" text="ID" />
+                <TableColumn fx:id="colCusName" prefWidth="101.0" text="Name" />
+                <TableColumn fx:id="colCusAddress" prefWidth="110.0" text="Address" />
+                <TableColumn fx:id="colCusContract" prefWidth="114.0" text="Contract" />
+            <TableColumn fx:id="colCusBtn" prefWidth="85.0" text="edt" />
+            </columns>
+        </TableView>
+        <BorderPane layoutY="339.0" prefHeight="44.0" prefWidth="408.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <center>
+                <JFXButton fx:id="btnSaveCustomer" prefHeight="37.0" prefWidth="169.0" style="-fx-background-color: #dfe6e9;" styleClass="btn" text="Save Customer" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Cambria Math" size="16.0" />
+               </font></JFXButton>
+            </center>
+        </BorderPane>
+      <Label layoutX="136.0" layoutY="25.0" prefHeight="51.0" prefWidth="254.0" text="Customer Registation Form" textFill="#0984e3">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="adminDashContext" prefHeight="599.0" prefWidth="976.0" style="-fx-background-color: #32ff7e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminDashBoardController">
+   <children>
+      <ImageView fitHeight="599.0" fitWidth="986.0" layoutY="1.0" opacity="0.85" pickOnBounds="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <image>
+            <Image url="@../assert/image/online-plant-seller-green-background.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="377.0" layoutY="388.0" mnemonicParsing="false" onAction="#vehicleAction" opacity="0.79" prefHeight="51.0" prefWidth="232.0" text="Vehicles" textFill="#7c117c">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font></Button>
+      <Separator layoutX="331.0" layoutY="96.0" orientation="VERTICAL" prefHeight="367.0" prefWidth="55.0" />
+      <Separator layoutX="12.0" layoutY="76.0" prefHeight="3.0" prefWidth="957.0" />
+      <Separator layoutX="14.0" layoutY="469.0" prefHeight="3.0" prefWidth="957.0" />
+      <Separator layoutX="591.0" layoutY="96.0" orientation="VERTICAL" prefHeight="367.0" prefWidth="55.0" />
+      <Button layoutX="377.0" layoutY="254.0" mnemonicParsing="false" onAction="#productsAction" opacity="0.79" prefHeight="51.0" prefWidth="232.0" text="Products" textFill="#7c117c">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font></Button>
+      <Label fx:id="lblDate" layoutX="796.0" layoutY="56.0" prefHeight="17.0" prefWidth="120.0" AnchorPane.leftAnchor="790.0" AnchorPane.topAnchor="52.0">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font></Label>
+      <Label layoutX="742.0" layoutY="53.0" prefHeight="17.0" prefWidth="61.0" text="Date :" AnchorPane.leftAnchor="735.0" AnchorPane.topAnchor="52.0">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font></Label>
+      <Button layoutX="377.0" layoutY="114.0" mnemonicParsing="false" onAction="#customerAction" opacity="0.79" prefHeight="51.0" prefWidth="232.0" text="Customer" textFill="#7c117c">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font></Button>
+      <Button layoutX="377.0" layoutY="183.0" mnemonicParsing="false" onAction="#plantsAction" opacity="0.79" prefHeight="51.0" prefWidth="232.0" text="plants" textFill="#7c117c">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font></Button>
+      <Button layoutX="377.0" layoutY="323.0" mnemonicParsing="false" onAction="#driverAction" opacity="0.79" prefHeight="51.0" prefWidth="232.0" text="Drivers" textFill="#7c117c">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font></Button>
+      <ImageView fitHeight="195.0" fitWidth="261.0" layoutX="704.0" layoutY="95.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/image/plant-shop-business-owner-delivery-packaging.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="195.0" fitWidth="261.0" layoutX="80.0" layoutY="95.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/image/AdobeStock_430133641_Preview.jpeg" />
+         </image>
+      </ImageView>
+      <Button layoutX="895.0" layoutY="570.0" mnemonicParsing="false" onAction="#backHomeOnAction" text="Back Home" />
+      <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@../assert/image/20_02.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="92.0" layoutY="26.0" prefHeight="51.0" prefWidth="588.0" text="Green Lanka Plants Nursery" textFill="#7d5fff" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="27.0">
+         <font>
+            <Font name="Calisto MT Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

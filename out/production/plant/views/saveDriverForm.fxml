@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="358.0" prefWidth="282.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SaveDriverFormController">
+   <children>
+      <Label layoutX="45.0" layoutY="24.0" text="Driver Register Form">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="49.0" prefHeight="5.0" prefWidth="245.0" />
+      <TextField fx:id="txtName" layoutX="24.0" layoutY="111.0" prefHeight="26.0" prefWidth="231.0" promptText="Driver name" />
+      <TextField fx:id="txtId" layoutX="24.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Driver id" />
+      <TextField fx:id="txtLicence" layoutX="24.0" layoutY="158.0" prefHeight="26.0" prefWidth="231.0" promptText="Driver Licence No" />
+      <TextField fx:id="txtContract" layoutX="24.0" layoutY="210.0" prefHeight="26.0" prefWidth="231.0" promptText="Driver Contract" />
+      <Button layoutX="24.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="231.0" text="Save" />
+   </children>
+</AnchorPane>

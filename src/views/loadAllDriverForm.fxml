@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoadAllDriverFormController">
+   <children>
+      <Label layoutX="16.0" layoutY="14.0" text="All Driver">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Separator layoutX="17.0" layoutY="38.0" prefHeight="2.0" prefWidth="529.0" />
+      <TableView fx:id="tblDriver" layoutX="16.0" layoutY="57.0" prefHeight="328.0" prefWidth="570.0">
+         <columns>
+            <TableColumn fx:id="colDriverId" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="colDriverName" prefWidth="94.0" text="Name" />
+            <TableColumn fx:id="colDriverLicence" prefWidth="173.0" text="Licence No" />
+            <TableColumn fx:id="colDriverContract" prefWidth="227.0" text="Contract" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mainPane" prefHeight="726.0" prefWidth="627.0" stylesheets="../assert/styles/CustomerForm.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewPlantFormController">
+   <children>
+      <VBox layoutX="17.0" layoutY="63.0" prefHeight="381.0" prefWidth="496.0" AnchorPane.topAnchor="63.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPlId" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Pl0-001" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Plant ID" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPlName" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="SunFlower" styleClass="textField" AnchorPane.topAnchor="8.0" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Plant Name" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPlType" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Flower" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Plant Type" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPlDescription" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Size 2ft" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" prefHeight="17.0" prefWidth="100.0" styleClass="textLabel" text="Plant Description" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="58.0" prefWidth="496.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPlUnitPrice" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="500.00" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Plant Unit Price" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="51.0" prefWidth="496.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPlQtyOnHand" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="20" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Plant QtyOn Hand" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <TableView fx:id="tblPlant" layoutX="4.0" layoutY="492.0" prefHeight="220.0" prefWidth="619.0">
+         <columns>
+            <TableColumn fx:id="colPlId" prefWidth="71.0" text="ID" />
+            <TableColumn fx:id="colPlName" prefWidth="84.0" text="Name" />
+            <TableColumn fx:id="colPlType" prefWidth="94.0" text="Type" />
+            <TableColumn fx:id="colPlDesc" prefWidth="105.0" text="Description" />
+            <TableColumn fx:id="colPlUnitPrice" prefWidth="98.0" text="Unit Price" />
+            <TableColumn fx:id="colPlQtyOnHand" prefWidth="99.0" text="QtyOn " />
+            <TableColumn fx:id="colPlBtn" prefWidth="67.0" text="edt" />
+         </columns>
+      </TableView>
+      <BorderPane layoutY="434.0" prefHeight="44.0" prefWidth="408.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <center>
+            <JFXButton fx:id="btnAddPlant" prefHeight="37.0" prefWidth="276.0" style="-fx-background-color: #dfe6e9;" styleClass="btn" text="Add plant" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Cambria Math" size="16.0" />
+               </font>
+            </JFXButton>
+         </center>
+      </BorderPane>
+      <Label layoutX="237.0" layoutY="23.0" prefHeight="51.0" prefWidth="154.0" text="Add Plants Form" textFill="#0984e3">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

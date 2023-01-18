@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlantPlaceOrderFormController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Plant Place Order">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="49.0" prefHeight="3.0" prefWidth="831.0" />
+      <Label layoutX="531.0" layoutY="32.0" text="Date :" />
+      <Label fx:id="lblDate" layoutX="570.0" layoutY="32.0" text="2022-10-12" textFill="#830000" />
+      <Label layoutX="658.0" layoutY="32.0" text="Time :" />
+      <Label fx:id="lblTime" layoutX="696.0" layoutY="32.0" text="10:20:35" textFill="#5e0000" />
+      <ComboBox fx:id="cmbCustomerId" layoutX="14.0" layoutY="65.0" prefWidth="150.0" promptText="Customer id" />
+      <TextField fx:id="txtName" layoutX="171.0" layoutY="65.0" promptText="Customer name" />
+      <TextField fx:id="txtAddress" layoutX="337.0" layoutY="65.0" promptText="Customer Address" />
+      <Separator layoutX="14.0" layoutY="107.0" prefHeight="1.0" prefWidth="750.0" />
+      <ComboBox fx:id="cmbPlantCode" layoutX="14.0" layoutY="119.0" prefWidth="150.0" promptText="Plant Code" />
+      <TextField fx:id="txtPlantDescription" layoutX="171.0" layoutY="119.0" prefHeight="26.0" prefWidth="232.0" promptText="Description" />
+      <TextField fx:id="txtPlantQtyOnHand" layoutX="410.0" layoutY="119.0" prefHeight="26.0" prefWidth="103.0" promptText="Qty On Hand" />
+      <TextField fx:id="txtplantUnitPrice" layoutX="519.0" layoutY="119.0" prefHeight="26.0" prefWidth="103.0" promptText="Unit price" />
+      <TextField fx:id="txtPlantQty" alignment="CENTER_RIGHT" layoutX="661.0" layoutY="119.0" prefHeight="26.0" prefWidth="103.0" promptText="QTY" />
+      <Separator layoutX="640.0" layoutY="119.0" orientation="VERTICAL" prefHeight="26.0" prefWidth="5.0" />
+      <Button layoutX="751.0" layoutY="159.0" mnemonicParsing="false" onAction="#addPlantToCartOnAction" text="Add To Cart">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="640.0" layoutY="159.0" mnemonicParsing="false" onAction="#plantRemoveItemOnAction" text="Remove Item">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tblCart" layoutX="14.0" layoutY="306.0" prefHeight="297.0" prefWidth="831.0">
+         <columns>
+            <TableColumn fx:id="colPlantId" prefWidth="93.0" text="Plant ID" />
+            <TableColumn fx:id="colPlantPrice" prefWidth="197.0" text="Plant Unit Price" />
+            <TableColumn fx:id="colPlantQty" prefWidth="147.0" text="Plant Qty" />
+            <TableColumn fx:id="colDeliveryCost" prefWidth="156.0" text="Delivery Cost" />
+            <TableColumn fx:id="colTotalCost" prefWidth="129.0" text="Total Cost" />
+            <TableColumn fx:id="colButton" prefWidth="103.0" text="---" />
+         </columns>
+      </TableView>
+      <Label layoutX="19.0" layoutY="612.0" prefHeight="17.0" prefWidth="45.0" text="Total :" />
+      <Label fx:id="lblTotalCost" layoutX="66.0" layoutY="607.0" prefHeight="28.0" prefWidth="62.0" text="0" textFill="#342bd0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="727.0" layoutY="617.0" mnemonicParsing="false" onAction="#plantPlaceOrderOnAction" prefHeight="25.0" prefWidth="112.0" text="Place Order">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="752.0" layoutY="65.0" mnemonicParsing="false" onAction="#openNewCustomerOnAction" prefHeight="26.0" prefWidth="78.0" text="Add">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ComboBox fx:id="cmbDeliveryCode" layoutX="14.0" layoutY="216.0" prefWidth="150.0" promptText="Delivery location Id" />
+      <Separator layoutX="14.0" layoutY="477.0" prefHeight="3.0" prefWidth="831.0" />
+      <TextField fx:id="txtDeliveryDesc" layoutX="171.0" layoutY="216.0" prefHeight="26.0" prefWidth="232.0" promptText="Description" />
+      <TextField fx:id="txtHireCost" layoutX="424.0" layoutY="216.0" prefHeight="26.0" prefWidth="125.0" promptText="Hire cost" />
+      <Button layoutX="579.0" layoutY="257.0" mnemonicParsing="false" onAction="#deliveryAddToCartOnAction" prefHeight="25.0" prefWidth="87.0" text="Add ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="14.0" layoutY="190.0" prefHeight="17.0" prefWidth="125.0" text="24 Hour Delivery Ok" />
+      <TextField fx:id="txtContract" layoutX="514.0" layoutY="66.0" promptText="Customer Contract" />
+      <Button layoutX="471.0" layoutY="257.0" mnemonicParsing="false" onAction="#deliveryRemoveItemOnAction" prefHeight="25.0" prefWidth="87.0" text="Remove">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Separator layoutX="19.0" layoutY="290.0" prefHeight="17.0" prefWidth="831.0" />
+   </children>
+</AnchorPane>

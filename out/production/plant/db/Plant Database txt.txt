@@ -1,0 +1,275 @@
+DROP DATABASE IF EXISTS plantNursery;
+CREATE DATABASE IF NOT EXISTS plantNursery;
+
+USE plantNursery;
+
+CREATE TABLE Customer(
+                         id VARCHAR(10) NOT NULL,
+                         name VARCHAR(30),
+                         address VARCHAR(30),
+                         contract VARCHAR(12),
+                         CONSTRAINT PRIMARY KEY (id)
+);
+
+CREATE TABLE `Order`(
+                        OrderId VARCHAR(10) NOT NULL,
+                        OrderDate DATE,
+                        id VARCHAR(6) NOT NULL,
+                        CONSTRAINT PRIMARY KEY (OrderId),
+                        CONSTRAINT FOREIGN KEY(id) REFERENCES Customer(id) on Delete Cascade on Update Cascade
+);
+CREATE TABLE plant(
+                     plantId VARCHAR(10) NOT NULL,
+                     plantName VARCHAR(30),
+                     plantType VARCHAR(30),
+                     description VARCHAR(50),
+                     unitPrice DECIMAL(8,2),
+                     qtyOnHand INT(5),
+                     CONSTRAINT PRIMARY KEY (plantId)
+);
+CREATE TABLE product(
+                      productId VARCHAR(10) NOT NULL,
+                      productName VARCHAR(30),
+                      productType VARCHAR(30),
+                      description VARCHAR(50),
+                      unitPrice DECIMAL(8,2),
+                      qtyOnHand INT(5),
+                      CONSTRAINT PRIMARY KEY (productId)
+);
+CREATE TABLE Item(
+                     ItemCode VARCHAR(10) NOT NULL,
+                     plantId VARCHAR(6) NOT NULL,
+                     productId VARCHAR(6) NOT NULL,
+                     description VARCHAR(50),
+                     unitPrice DECIMAL(8,2),
+                     qtyOnHand INT(5),
+                     CONSTRAINT PRIMARY KEY (ItemCode),
+                     CONSTRAINT FOREIGN KEY(plantId) REFERENCES plant(plantId) on Delete Cascade on Update Cascade,
+                     CONSTRAINT FOREIGN KEY(productId) REFERENCES product(productId) on Delete Cascade on Update Cascade
+);
+CREATE TABLE OrderDetail(
+                            OrderDetailId VARCHAR(10) NOT NULL,
+                            itemCode VARCHAR(6) NOT NULL,
+                            plantId VARCHAR(6) NOT NULL,
+                            productId VARCHAR(6) NOT NULL,
+                            qty INT(11),
+                            unitPrice DECIMAL(8,2),
+                            CONSTRAINT PRIMARY KEY (OrderDetailId,itemCode),
+                            CONSTRAINT FOREIGN KEY (OrderDetailId) REFERENCES `Order`(OrderId) on Delete Cascade on Update Cascade,
+                            CONSTRAINT FOREIGN KEY (itemCode) REFERENCES Item(itemCode) on Delete Cascade on Update Cascade,
+                            CONSTRAINT FOREIGN KEY (plantId) REFERENCES plant(plantId) on Delete Cascade on Update Cascade,
+                            CONSTRAINT FOREIGN KEY (productId) REFERENCES product(productId) on Delete Cascade on Update Cascade
+);
+CREATE TABLE Driver(
+                         driverId VARCHAR(10) NOT NULL,
+                         name VARCHAR(30),
+                         licence VARCHAR(30),
+                         contract VARCHAR(12),
+                         CONSTRAINT PRIMARY KEY (driverId)
+);
+CREATE TABLE Vehicle(
+                        vehicleId VARCHAR(10) NOT NULL,
+                        name VARCHAR(30),
+                        description VARCHAR(30),
+                        driverId VARCHAR(30),
+                        CONSTRAINT PRIMARY KEY (vehicleId)
+);
+CREATE TABLE Delivery(
+                       deliveryId VARCHAR(10) NOT NULL,
+                       location VARCHAR(30),
+                       description VARCHAR(30),
+                       hireCost DECIMAL(8,2),
+   #                   driverId VARCHAR(6) NOT NULL,
+    #                  vehicleId VARCHAR(6) NOT NULL,
+                       CONSTRAINT PRIMARY KEY (deliveryId)
+);
+#---------------------------------------------------------------------------------------------------------------------
+#--------------------Vehicle------------------------------------------
+INSERT INTO Vehicle VALUES('v00-001','mitshubishi','lorry','Dr001');
+INSERT INTO Vehicle VALUES('v00-002','isuzu','lorry','Dr002');
+INSERT INTO Vehicle VALUES('v00-003','nissan','lorry','Dr003');
+INSERT INTO Vehicle VALUES('v00-004','mazda','lorry','Dr004');
+INSERT INTO Vehicle VALUES('v00-005','toyota','lorry','Dr005');
+/*
+#--------------------Delivery------------------------------------------
+INSERT INTO Delivery VALUES('De001','Dr001','v001','Panadura','lorry',525.00);
+INSERT INTO Delivery VALUES('De002','Dr002','v003','Matara','lorry',525.00);
+INSERT INTO Delivery VALUES('De003','Dr003','v002','Galle','lorry',525.00);
+INSERT INTO Delivery VALUES('De004','Dr004','v005','Baddegama','lorry',525.00);
+INSERT INTO Delivery VALUES('De005','Dr005','v001','Kandy','lorry',525.00);
+INSERT INTO Delivery VALUES('De006','Dr006','v004','colombo','lorry',525.00);
+INSERT INTO Delivery VALUES('De007','Dr007','v005','Moratuwa','lorry',525.00);
+*/
+#--------------------Delivery------------------------------------------
+INSERT INTO Delivery VALUES('De0-001','Jaffna','lorry',5000.00);
+INSERT INTO Delivery VALUES('De0-002','Kilinochchi','lorry',4500.00);
+INSERT INTO Delivery VALUES('De0-003','Mannar','lorry',4250.00);
+INSERT INTO Delivery VALUES('De0-004','Mullaitivu','lorry',4150.00);
+INSERT INTO Delivery VALUES('De0-005','Vavuniya','lorry',4100.00);
+INSERT INTO Delivery VALUES('De0-006','Puttalam','lorry',4000.00);
+INSERT INTO Delivery VALUES('De0-007','Kurunegala','lorry',3750.00);
+INSERT INTO Delivery VALUES('De0-008','Gampaha','lorry',2500.00);
+INSERT INTO Delivery VALUES('De0-009','Colombo','lorry',2000.00);
+INSERT INTO Delivery VALUES('De0-010','Kalutara','lorry',500.00);
+INSERT INTO Delivery VALUES('De0-011','Anuradhapura','lorry',3700.00);
+INSERT INTO Delivery VALUES('De0-012','Polonnaruwa','lorry',4000.00);
+INSERT INTO Delivery VALUES('De0-013','Matale','lorry',3500.00);
+INSERT INTO Delivery VALUES('De0-014','Kandy','lorry',4000.00);
+INSERT INTO Delivery VALUES('De0-015','Nuwara Eliya','lorry',4500.00);
+INSERT INTO Delivery VALUES('De0-016','Kegalle','lorry',4800.00);
+INSERT INTO Delivery VALUES('De0-017','Ratnapura','lorry',3000.00);
+INSERT INTO Delivery VALUES('De0-018','Trincomalee','lorry',4800.00);
+INSERT INTO Delivery VALUES('De0-019','Batticaloa','lorry',3650.00);
+INSERT INTO Delivery VALUES('De0-020','Ampara','lorry',4600.00);
+INSERT INTO Delivery VALUES('De0-021','Badulla','lorry',3500.00);
+INSERT INTO Delivery VALUES('De0-022','Monaragala','lorry',4000.00);
+INSERT INTO Delivery VALUES('De0-023','Hambantota','lorry',4500.00);
+INSERT INTO Delivery VALUES('De0-024','Matara','lorry',3000.00);
+INSERT INTO Delivery VALUES('De0-025','Galle','lorry',2500.00);
+INSERT INTO Delivery VALUES('De0-026','Free service','lorry',00.00);
+INSERT INTO Delivery VALUES('De0-027','Moratuwa','lorry',700.00);
+INSERT INTO Delivery VALUES('De0-028','panadura','lorry',.500);
+INSERT INTO Delivery VALUES('De0-029','kalutara','lorry',450.00);
+INSERT INTO Delivery VALUES('De0-030','wadduwa','lorry',300.00);
+
+#--------------------Customer------------------------------------------
+INSERT INTO Customer VALUES('C00-001','Danapala','Panadura',6565656);
+INSERT INTO Customer VALUES('C00-002','Gunapala','Matara',65655656);
+INSERT INTO Customer VALUES('C00-003','Somapala','Galle',2565514655);
+INSERT INTO Customer VALUES('C00-004','Siripala','Galle',25625656);
+INSERT INTO Customer VALUES('C00-005','Jinadasa','Panadura',565968562);
+INSERT INTO Customer VALUES('C00-006','Sepalika','Kalutara',632659859);
+INSERT INTO Customer VALUES('C00-007','Jinasena','Ambalangoda',561218548);
+INSERT INTO Customer VALUES('C00-008','Somadasa','Baddegama',4874512);
+INSERT INTO Customer VALUES('C00-009','Danasiri','Moratuwa',212445214);
+INSERT INTO Customer VALUES('C00-010','Somasiri','Kandy',598798465);
+
+#--------------------Driver------------------------------------------
+INSERT INTO Driver VALUES('Dr0-001','Danapala','658756',8656546);
+INSERT INTO Driver VALUES('Dr0-002','Gunapala','456746',4565544);
+INSERT INTO Driver VALUES('Dr0-003','Somapala','5654546',265454);
+INSERT INTO Driver VALUES('Dr0-004','Siripala','546546',12145554);
+INSERT INTO Driver VALUES('Dr0-005','Jinadasa','546546',548665465);
+INSERT INTO Driver VALUES('Dr0-006','Sepalika','4896876',6565546);
+INSERT INTO Driver VALUES('Dr0-007','Jinasena','3213138',1545446);
+INSERT INTO Driver VALUES('Dr0-008','Somadasa','8987653',65554466);
+INSERT INTO Driver VALUES('Dr0-009','Danasiri','5468496876',216454);
+INSERT INTO Driver VALUES('Dr0-010','Somasiri','5678978',2566554);
+
+#--------------------`Order`-------------------------
+/*
+INSERT INTO `Order` VALUES('D001','2008-2-15','C001');
+INSERT INTO `Order` VALUES('D002','2008-2-15','C005');
+INSERT INTO `Order` VALUES('D003','2008-2-20','C007');
+INSERT INTO `Order` VALUES('D004','2008-2-28','C002');
+INSERT INTO `Order` VALUES('D005','2008-3-20','C001');
+INSERT INTO `Order` VALUES('D006','2008-4-10','C003');
+INSERT INTO `Order` VALUES('D007','2008-5-10','C004');
+INSERT INTO `Order` VALUES('D008','2008-6-20','C005');
+INSERT INTO `Order` VALUES('D009','2008-8-12','C006');
+INSERT INTO `Order` VALUES('D010','2008-9-20','C006');
+INSERT INTO `Order` VALUES('D011','2009-2-13','C002');
+INSERT INTO `Order` VALUES('D012','2009-2-16','C007');
+INSERT INTO `Order` VALUES('D013','2009-2-20','C009');
+INSERT INTO `Order` VALUES('D014','2009-3-16','C002');
+INSERT INTO `Order` VALUES('D015','2009-4-15','C007');
+INSERT INTO `Order` VALUES('D016','2009-8-26','C009');
+INSERT INTO `Order` VALUES('D017','2010-2-16','C010');
+INSERT INTO `Order` VALUES('D018','2010-3-26','C002');
+INSERT INTO `Order` VALUES('D019','2011-6-11','C010');
+INSERT INTO `Order` VALUES('D020','2011-9-26','C010');
+*/
+#--------------------Plants----------------------------------------------
+INSERT INTO Plant VALUES('Pl0-001','Rose','flower','null',500.00,200);
+INSERT INTO Plant VALUES('Pl0-002','anturium','flower','null',1000.00,300);
+INSERT INTO Plant VALUES('Pl0-003','tulips','flower','null',250.00,4000);
+INSERT INTO Plant VALUES('Pl0-004','bluebell','flower','null',700.00,50);
+INSERT INTO Plant VALUES('Pl0-005','orchids','flower','null',750.00,70);
+INSERT INTO Plant VALUES('Pl0-006','mango','tree','null',250.00,60);
+INSERT INTO Plant VALUES('Pl0-007','coconut','tree','null',500.00,100);
+INSERT INTO Plant VALUES('Pl0-008','wood apple','fruit','null',400.00,30);
+INSERT INTO Plant VALUES('Pl0-009','cashew','fruit','null',550.00,10);
+INSERT INTO Plant VALUES('Pl0-010','orange','fruit','null',300.00,50);
+INSERT INTO Plant VALUES('Pl0-011','papaya','fruit','null',100.00,60);
+INSERT INTO Plant VALUES('Pl0-012','banana','fruit','null',350.00,80);
+INSERT INTO Plant VALUES('Pl0-013','pomegranate','fruit','null',450.00,60);
+INSERT INTO Plant VALUES('Pl0-014','cherry','fruit','null',150.00,90);
+INSERT INTO Plant VALUES('Pl0-015','grapes','fruit','null',300.00,200);
+INSERT INTO Plant VALUES('Pl0-016','carrot','vegetable','null',70.00,500);
+INSERT INTO Plant VALUES('Pl0-017','chilli','vegetable','null',80.00,2000);
+INSERT INTO Plant VALUES('Pl0-018','beetroot','vegetable','null',100.00,2000);
+INSERT INTO Plant VALUES('Pl0-019','ginger','vegetable','null',100.00,1000);
+INSERT INTO Plant VALUES('Pl0-020','brinjal','vegetable','null',80.00,4000);
+
+#--------------------Products----------------------------------------------
+INSERT INTO product VALUES('Pr0-001','grape hope','metal','null',500.00,200);
+INSERT INTO product VALUES('Pr0-002','grass shears','metal','null',750.00,200);
+INSERT INTO product VALUES('Pr0-003','hedge shears','metal','null',800.00,200);
+INSERT INTO product VALUES('Pr0-004','rake','metal','null',600.00,200);
+INSERT INTO product VALUES('Pr0-005','spade','metal','null',450.00,200);
+INSERT INTO product VALUES('Pr0-006','trowel','metal','null',650.00,200);
+INSERT INTO product VALUES('Pr0-007','sickle','metal','null',1200.00,200);
+INSERT INTO product VALUES('Pr0-008','lawn rake','plastic','null',550.00,200);
+INSERT INTO product VALUES('Pr0-009','pruning shears','metal','null',700.00,200);
+INSERT INTO product VALUES('Pr0-010','water can','plastic','null',400.00,200);
+INSERT INTO product VALUES('Pr0-011','hose','rubber','null',3000.00,200);
+INSERT INTO product VALUES('Pr0-012','shears','metal','null',2000.00,200);
+INSERT INTO product VALUES('Pr0-013','fork','metal','null',1000.00,200);
+INSERT INTO product VALUES('Pr0-014','showel','metal','null',500.00,200);
+INSERT INTO product VALUES('Pr0-015','grass cuterr','metal','null',350.00,200);
+INSERT INTO product VALUES('Pr0-016','lawn mower','product','null',500.00,200);
+INSERT INTO product VALUES('Pr0-017','sprinkler','plastic','null',750.00,200);
+INSERT INTO product VALUES('Pr0-018','ladder','wood','null',780.00,200);
+INSERT INTO product VALUES('Pr0-019','paint brush','loon','null',1500.00,200);
+INSERT INTO product VALUES('Pr0-020','roller','cloth','null',800.00,200);
+
+#--------------------Item----------------------------------------------
+
+
+/*
+
+
+INSERT INTO OrderDetail VALUES('D001','Pr011','Pr011','P001',3,105.00);
+INSERT INTO OrderDetail VALUES('D001','Pr011','Pr011','P001',5,525.00);
+INSERT INTO OrderDetail VALUES('D001','Pr011','Pr011','P001',8,995.00);
+INSERT INTO OrderDetail VALUES('D001','Pr011','Pr011','P001',1,560.00);
+INSERT INTO OrderDetail VALUES('D002','Pr011','Pr011','P001',4,525.00);
+INSERT INTO OrderDetail VALUES('D002','Pr011','Pr011','P001',4,995.00);
+INSERT INTO OrderDetail VALUES('D002','Pr011','Pr011','P001',3,275.00);
+INSERT INTO OrderDetail VALUES('D002','Pr011','Pr011','P001',7,90.00);
+INSERT INTO OrderDetail VALUES('D002','Pr011','Pr011','P001',3,90.00);
+INSERT INTO OrderDetail VALUES('D003','Pr011','Pr011','P001',9,105.00);
+INSERT INTO OrderDetail VALUES('D003','Pr011','Pr011','P001',6,4100.00);
+INSERT INTO OrderDetail VALUES('D003','Pr011','Pr011','P001',7,118.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',2,525.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',7,60.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',1,275.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',9,240.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',5,220.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',8,220.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',5,107.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',2,90.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',3,190.00);
+INSERT INTO OrderDetail VALUES('D004','Pr011','Pr011','P001',4,118.00);
+INSERT INTO OrderDetail VALUES('D005','Pr011','Pr011','P001',6,105.00);
+INSERT INTO OrderDetail VALUES('D005','Pr011','Pr011','P001',8,995.00);
+INSERT INTO OrderDetail VALUES('D005','Pr011','Pr011','P001',9,5230.00);
+INSERT INTO OrderDetail VALUES('D006','Pr011','Pr011','P001',9,995.00);
+INSERT INTO OrderDetail VALUES('D006','Pr011','Pr011','P001',8,560.00);
+INSERT INTO OrderDetail VALUES('D007','Pr011','Pr011','P001',1,107.00);
+INSERT INTO OrderDetail VALUES('D008','Pr011','Pr011','P001',3,105.00);
+INSERT INTO OrderDetail VALUES('D009','Pr011','Pr011','P001',2,525.00);
+INSERT INTO OrderDetail VALUES('D009','Pr011','Pr011','P001',2,995.00);
+INSERT INTO OrderDetail VALUES('D009','Pr011','Pr011','P001',2,60.00);
+INSERT INTO OrderDetail VALUES('D009','Pr011','Pr011','P001',9,5230.00);
+INSERT INTO OrderDetail VALUES('D009','Pr011','Pr011','P001',2,275.00);
+INSERT INTO OrderDetail VALUES('D009','Pr011','Pr011','P001',9,105.00);
+INSERT INTO OrderDetail VALUES('D009','Pr011','Pr011','P001',5,560.00);
+INSERT INTO OrderDetail VALUES('D010','Pr011','Pr011','P001',6,90.00);
+INSERT INTO OrderDetail VALUES('D010','Pr011','Pr011','P001',3,90.00);
+INSERT INTO OrderDetail VALUES('D010','Pr011','Pr011','P001',6,4100.00);
+INSERT INTO OrderDetail VALUES('D010','Pr011','Pr011','P001',6,105.00);
+INSERT INTO OrderDetail VALUES('D010','Pr011','Pr011','P001',5,220.00);
+INSERT INTO OrderDetail VALUES('D010','Pr011','Pr011','P001',3,525.00);*/
+
+

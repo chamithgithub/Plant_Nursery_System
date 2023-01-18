@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mainPane" prefHeight="726.0" prefWidth="523.0" stylesheets="../assert/styles/CustomerForm.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewVehicleFormController">
+   <children>
+      <VBox layoutX="17.0" layoutY="76.0" prefHeight="268.0" prefWidth="496.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtVlId" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Vl0-001" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Vehicle ID" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtVlBrand" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Toyota" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Vehicle Brand" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtVlType" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Double Cab" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Vehicle Type" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtVlNumber" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="231-2358" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Vehicle Number" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <TableView fx:id="tblVehicle" layoutX="14.0" layoutY="395.0" prefHeight="317.0" prefWidth="496.0">
+         <columns>
+            <TableColumn fx:id="colVlId" prefWidth="84.0" text="ID" />
+            <TableColumn fx:id="colVlBrand" prefWidth="101.0" text="Vehicle Brand" />
+            <TableColumn fx:id="colVlType" prefWidth="110.0" text="Vehicle Type" />
+            <TableColumn fx:id="colVlNumber" prefWidth="114.0" text="Vehicle Number" />
+            <TableColumn fx:id="colVlBtn" prefWidth="85.0" text="edt" />
+         </columns>
+      </TableView>
+      <BorderPane layoutY="339.0" prefHeight="44.0" prefWidth="408.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <center>
+            <JFXButton fx:id="btnAddVehicle" prefHeight="37.0" prefWidth="169.0" style="-fx-background-color: #dfe6e9;" styleClass="btn" text="Add Vehicle " BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Cambria Math" size="16.0" />
+               </font>
+            </JFXButton>
+         </center>
+      </BorderPane>
+      <Label layoutX="183.0" layoutY="25.0" prefHeight="51.0" prefWidth="158.0" text="Add Vehicle Form" textFill="#0984e3">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

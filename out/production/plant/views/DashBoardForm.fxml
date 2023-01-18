@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="599.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardFormController">
+   <children>
+      <ImageView fitHeight="599.0" fitWidth="986.0" layoutY="1.0" opacity="0.85" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../assert/image/online-plant-seller-green-background.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="24.0" layoutY="26.0" prefHeight="51.0" prefWidth="451.0" text="Green Lanka Plants Nursery" textFill="#131da1">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="391.0" layoutY="117.0" mnemonicParsing="false" onAction="#saveCustomerOnAction" prefHeight="40.0" prefWidth="199.0" text="Registor Customer" />
+      <Button layoutX="391.0" layoutY="184.0" mnemonicParsing="false" onAction="#searchCustomerOnAction" prefHeight="25.0" prefWidth="199.0" text="Search Customer" />
+      <Button layoutX="748.0" layoutY="500.0" mnemonicParsing="false" onAction="#updateCustomerOnAction" prefHeight="25.0" prefWidth="199.0" text="Update Customer " />
+      <Button layoutX="33.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteCustomerOnAction" prefHeight="25.0" prefWidth="199.0" text="Delete Customer" />
+      <Button layoutX="394.0" layoutY="307.0" mnemonicParsing="false" onAction="#loadAllCustomersOnAction" prefHeight="25.0" prefWidth="199.0" text="Load All Customers" />
+      <Button layoutX="392.0" layoutY="426.0" mnemonicParsing="false" onAction="#placeOrderOnAction" prefHeight="32.0" prefWidth="199.0" text="Place Order" />
+      <Button layoutX="290.0" layoutY="497.0" mnemonicParsing="false" onAction="#adminLoginOnAction" prefHeight="32.0" prefWidth="407.0" text="Admin Login" textFill="#7c117c" />
+      <ImageView fitHeight="138.0" fitWidth="184.0" layoutX="748.0" layoutY="96.0" opacity="0.73" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/image/plant-shop-business-owner-delivery-packaging.jpg" />
+         </image>
+      </ImageView>
+      <Separator layoutX="331.0" layoutY="96.0" orientation="VERTICAL" prefHeight="367.0" prefWidth="55.0" />
+      <Separator layoutX="12.0" layoutY="76.0" prefHeight="3.0" prefWidth="957.0" />
+      <Separator layoutX="14.0" layoutY="469.0" prefHeight="3.0" prefWidth="957.0" />
+      <Button layoutX="391.0" layoutY="222.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Search plants" />
+      <Button layoutX="391.0" layoutY="267.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Search product" />
+      <Button layoutX="392.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Load All plants" />
+      <Button layoutX="392.0" layoutY="382.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Load All product" />
+      <Separator layoutX="591.0" layoutY="96.0" orientation="VERTICAL" prefHeight="367.0" prefWidth="55.0" />
+   </children>
+</AnchorPane>

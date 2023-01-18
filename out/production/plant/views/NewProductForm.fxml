@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mainPane" prefHeight="726.0" prefWidth="627.0" stylesheets="../assert/styles/CustomerForm.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewProductFormController">
+   <children>
+      <VBox layoutX="17.0" layoutY="63.0" prefHeight="381.0" prefWidth="496.0" AnchorPane.topAnchor="63.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPrId" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Pr0-001" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Product ID" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPrName" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Water hose" styleClass="textField" AnchorPane.topAnchor="8.0" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Product Name" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPrType" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="Rubber" styleClass="textField" />
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="textLabel" text="Product Type" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPrDescription" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="50M size" styleClass="textField" />
+                  <Label layoutY="13.0" prefHeight="17.0" prefWidth="112.0" styleClass="textLabel" text="Product Description" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="58.0" prefWidth="496.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPrUnitPrice" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="300.00" styleClass="textField" />
+                  <Label layoutY="14.0" styleClass="textLabel" text="Product Unit Price" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="51.0" prefWidth="496.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtPrOtyOnHand" layoutX="118.0" layoutY="8.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="360.0" promptText="20" styleClass="textField" />
+                  <Label layoutY="14.0" styleClass="textLabel" text="Product QtyOn Hand" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <TableView fx:id="tblProduct" layoutX="4.0" layoutY="492.0" prefHeight="220.0" prefWidth="619.0">
+         <columns>
+            <TableColumn fx:id="colPrId" prefWidth="71.0" text="ID" />
+            <TableColumn fx:id="colPrName" prefWidth="84.0" text="Name" />
+            <TableColumn fx:id="colPrType" prefWidth="94.0" text="Type" />
+            <TableColumn fx:id="colPrDesc" prefWidth="105.0" text="Description" />
+            <TableColumn fx:id="colPrUnitPrice" prefWidth="98.0" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="99.0" text="QtyOn " />
+            <TableColumn fx:id="colPrBtn" prefWidth="67.0" text="edt" />
+         </columns>
+      </TableView>
+      <BorderPane layoutY="434.0" prefHeight="44.0" prefWidth="408.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <center>
+            <JFXButton fx:id="btnAddProduct" prefHeight="37.0" prefWidth="276.0" style="-fx-background-color: #dfe6e9;" styleClass="btn" text="Add Product " BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Cambria Math" size="16.0" />
+               </font>
+            </JFXButton>
+         </center>
+      </BorderPane>
+      <Label layoutX="231.0" layoutY="22.0" prefHeight="51.0" prefWidth="166.0" text="Add Product Form" textFill="#0984e3">
+         <font>
+            <Font name="Cambria Math" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
